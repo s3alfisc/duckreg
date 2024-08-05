@@ -61,6 +61,7 @@ class DuckReg(ABC):
             if self.n_bootstraps > 0:
                 self.vcov = self.bootstrap()
             fit._vcov = self.vcov
+            fit.get_inference()
             return fit
 
         else:
